@@ -26,6 +26,8 @@ class NetworkServiceBuilder(
         val okHttpClientBuilder = OkHttpClient.Builder()
         okHttpClientBuilder.addInterceptor(buildLoggingInterceptor())
         okHttpClientBuilder.addInterceptor(errorInterceptor)
+        okHttpClientBuilder.addInterceptor(sessionInterceptor)
+        okHttpClientBuilder.addInterceptor(languageInterceptor)
         return okHttpClientBuilder.build()
     }
 
